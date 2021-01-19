@@ -49,7 +49,7 @@
                     <div class="trainer-main-box">
                     <video src="images/campfire.mp4" muted autoplay loop class="menuVideo"></video>
                     <a href="Trainers.php"><i class="fas fa-walking userWeightIcon"></i></a>
-                    <a href="#"><i class="fas fa-shopping-bag userWeightIcon"></i></a>
+                    <a href="products.php"><i class="fas fa-shopping-bag userWeightIcon"></i></a>
                     <a href="#"><i class="fas fa-dumbbell userWeightIcon"></i></a>
                     </div>
                     <!-- User weight and height box -->
@@ -73,7 +73,7 @@
                     <div class="logoutSettingsBox">
                     <video src="images/campfire.mp4" muted autoplay loop class="menuVideo3"></video>
                     <div class="video-cover"></div>
-                        <a href="#"><i class="fas fa-cog userWeightIcon"></i></a>
+                        <a href="#"><i class="fas fa-shopping-cart userWeightIcon"></i></a>
                         <a href="includes/logout.inc.php"><i class="fas fa-sign-out-alt userWeightIcon"></i></a>
                     </div>
                 </div>

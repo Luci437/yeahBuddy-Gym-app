@@ -3,12 +3,12 @@ const allImages = ['slider1.jpg','slider2.jpg','slider3.jpg'];
 const totalImages = allImages.length;
 let currentImage = Math.floor(Math.random() * totalImages);
 let el = document.getElementsByClassName('imageInSlider');
-if(el) {
+// checking if there is any image slider found
+if(el[0]) {
     el[0].style.background = "url(./images/"+ allImages[currentImage]+")";
     el[0].style.backgroundPosition = "center";
     el[0].style.backgroundSize = "cover";
 }
-
 // up to here all the variable are for image slider
 // function that changes the image
 function changeImage(changeValue) {
@@ -20,15 +20,12 @@ function changeImage(changeValue) {
     }
     $('.imageInSlider').css({'background':'url("./images/'+ allImages[currentImage] +'")','background-position':'center','background-size':'cover'});
 }
-
 // this is to check if the user uploaded any profile pic
 // if he uploaded then that picture will be shown here
 const userPicUploaded = $('#userDP').val();
 if(userPicUploaded) {
     $('#userImageLabel').css({'background':'url('+ userPicUploaded +')','background-position':'center','background-size':'cover'});
 }
-
-
 // This is where we change our profile picture
 $('#user-image-upload').on('change',function(e){
     e.preventDefault();
@@ -50,7 +47,6 @@ $('#user-image-upload').on('change',function(e){
         }
     });
 });
-
 //change user weight
 function changeWeight() {
     let userWeight = $('#userWeight').val();
@@ -68,7 +64,6 @@ function changeWeight() {
         }
     });
 }
-
 //change user height
 function changeHeight() {
     let userHeight = $('#userHeight').val();
@@ -86,7 +81,6 @@ function changeHeight() {
         }
     });
 }
-
 //finding BMI
 findBMI();
 function findBMI() {
@@ -104,7 +98,6 @@ function findBMI() {
         $('.bmiCard').css("display","block");
     }
 }
-
 //close bmi box
 function closeBmi() {
     $('.bmiCard').css("display","none");
