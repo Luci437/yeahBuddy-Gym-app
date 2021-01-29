@@ -13,7 +13,7 @@
     <?php
         require('includes/db.inc.php');
 
-        $sql = 'SELECT * FROM product';
+        $sql = 'SELECT * FROM product WHERE prdQty > 0;';
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result)) {
             echo '

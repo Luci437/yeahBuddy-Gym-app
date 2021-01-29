@@ -797,3 +797,14 @@ body {
     font-weight: bold;
     border-radius: 8px;
 }
+.addressInput {
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    background: rgb(241, 241, 241);
+    transition: 0.3s ease-out;
+}
+.addressInput:focus {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.123), -5px -5px 5px white;
+}
