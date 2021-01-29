@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Rubik', sans-serif;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #E2E3F4;
+    display: flex;
+    box-sizing: border-box;
+}
+.menuMainBox {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.mainContainer {
+    width: 80%;
+    padding: 10px;
+}
+.menuBox {
+    width: 100%;
+    height: 100%;
+    background: #e9eaf6;
+    border: 2px solid rgba(248, 246, 246, 0.383);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.075);
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+.contentBox {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    background: #e9eaf6;
+    border: 2px solid rgba(248, 246, 246, 0.383);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.075);
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+.adminTitle {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    padding: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.pdspace {
+    padding-right: 8px;
+}
+.menuList {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.menus {
+    padding: 16px 40px;
+    box-sizing: border-box;
+    color: rgb(100, 100, 100);
+    font-weight: 600;
+    font-size: 14px;
+}
+.menus:hover {
+    color: #333;
+    background: #e4e5f1;
+}
+.menus:hover .addButton {
+    opacity: 1;
+}
+.titleBox {
+    background: linear-gradient(to right,#171717,#252525);
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+.titleImageBox {
+    width: 50px;
+    height: 50px;
+    background: url('../../images/icon.png');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+}
+.titleDetailsBox {
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+.titleDetailsBox p {
+    color: #fff;
+    padding: 3px;
+    font-weight: 500;
+}
+.titleDetailsBox p:nth-child(1) {
+    color: rgba(255, 255, 255, 0.301);
+    font-weight: 300;
+}
+.mainContentBox {
+    width: 100%;
+    position: relative;
+    padding: 16px;
+    box-sizing: border-box;
+    top: 8px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(4,1fr);
+} 
+.eachProductBox {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    transition: 0.2s linear;
+    overflow: hidden;
+}
+.productImageBox {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    padding: 24px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.prdImage {
+    max-width: 100%;
+    max-height: 100%;
+}
+.prdName {
+    color: #333;
+    padding: 12px 0;
+}
+.prdPrice {
+    color: #333;
+    display: flex;
+}
+.prdPrice span {
+    font-size: 24px;
+    padding: 0 5px;
+}
+.eachProductBox:hover {
+    border: 2px solid rgba(155, 99, 219, 0.781);
+}
+.mainUserContentBox {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+    top: 3%;
+}
+.userBox {
+    background: linear-gradient(to right,#ffffff,#f6f6f6);
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+}
+.userImageBox {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.userPic {
+    max-width: 100%;
+    max-height: 100%;
+}
+.userDetailsBox {
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+.userDetailsBox p {
+    color: rgb(34, 34, 34);
+    padding: 3px;
+    font-weight: 500;
+}
+.userDetailsBox p:nth-child(2) {
+    color: rgba(0, 0, 0, 0.534);
+    font-weight: 300;
+}
+.addButton {
+    position: absolute;
+    padding: 8px 16px;
+    background: linear-gradient(45deg,rgb(25, 27, 129),rgb(253, 61, 205),rgb(255, 159, 69));
+    right: 8px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 12px;
+    top: 50%;
+    color: rgba(255, 255, 255, 0.877);
+    transform: translateY(-50%);
+}
+.eachTrainerBox {
+    width: 100%;
+    padding: 8px;
+    background: rgb(250, 250, 250);
+    display: flex;
+    border-radius: 8px;
+    position: relative;
+    box-sizing: border-box;
+}
+.trainerImageBox {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.trainerPic {
+    max-height: 100%;
+    max-width: 100%;
+    transform: scale(1.5) translateY(10%);
+}
+.trainerDetailsBox {
+    padding: 0 8px;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+.trainerName {
+    color: #333;
+}
+.trainerDetails {
+    color: #333;
+    font-weight: 400;
+}
+.expYears {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    padding: 3px 8px;
+    background: linear-gradient(rgb(245, 241, 7),rgb(250, 234, 14));
+    border-radius: 10px;
+    font-weight: bold;
+    color: rgb(109, 109, 21);
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.mainContentBoxAdd {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addForm {
+    position: relative;
+    width: 240px;
+}
+.addForm h2 {
+    padding: 8px 0;
+}
+.inputMainBox {
+    position: relative;
+}
+.inputLabel {
+    position: absolute;
+    padding: 8px;
+    color: rgb(158, 158, 158);
+    left: 0;
+    transition: 0.2s ease;
+}
+.inputInput {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgb(244, 244, 255);
+    margin-bottom: 10px;
+    min-width: 240px;
+    font-weight: bold;
+    color: #333;
+    box-sizing: border-box;
+}
+.inputInput:focus + .inputLabel {
+    font-size: 13px;
+    transform: translateY(-12px);
+    font-weight: bold;
+}
+.inputInput:valid + .inputLabel {
+    font-size: 13px;
+    transform: translateY(-12px);
+    font-weight: bold;
+}
+.submitButton {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: rgb(51, 51, 228);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.116);
+    cursor: pointer;
+}
