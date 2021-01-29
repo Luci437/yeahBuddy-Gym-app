@@ -102,3 +102,17 @@ function findBMI() {
 function closeBmi() {
     $('.bmiCard').css("display","none");
 }
+//add to cart button
+function addToCart(cart) {
+    let id = $(cart).attr('data-id');
+    $.ajax({
+        url: 'ajax/addToCart.ajax.php',
+        type: 'POST',
+        data: {
+            id: id
+        },
+        success: function(dataResult) {
+            alert(' '+dataResult);
+        }
+    });
+}

@@ -23,7 +23,7 @@
             <div class="productImageBox">
                 <img class="prdImage" src="'.$row['prdImage'].'" alt="">
             </div>
-            <button class="addToCartButton">Cart Now <i class="fas fa-shopping-cart cartButtonIcon"></i></button>
+            <button class="addToCartButton" data-id="'.$row['id'].'" onclick="addToCart(this);">Cart Now <i class="fas fa-shopping-cart cartButtonIcon"></i></button>
             </div>
             ';
         }
