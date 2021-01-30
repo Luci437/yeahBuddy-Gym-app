@@ -6,6 +6,11 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
+        if($email == 'admin@yeahbuddy.com' && $password == 'admin') {
+            header('Location: ../admin/adminIndex.php');
+            exit();
+        }
+
         $sql = "SELECT * FROM usertable WHERE email='$email' AND password='$password';";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_num_rows($result);

@@ -36,7 +36,7 @@
                 <img src="../'.$row['trainerImage'].'" alt="" class="trainerPic">
             </div>
             <div class="trainerDetailsBox">
-                <h4 class="trainerName"'.$row['trainerName'].'</h4>
+                <h4 class="trainerName">'.$row['trainerName'].'</h4>
                 <h5 class="trainerDetails">'.$row['trainerAbout'].'</h5>
                 <span class="expYears">'.$row['trainerEOX'].' Years</span>
             </div>

@@ -239,6 +239,7 @@ body {
 }
 .trainerName {
     color: #333;
+    position: relative;
 }
 .trainerDetails {
     color: #333;
@@ -312,4 +313,24 @@ body {
     border-radius: 16px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.116);
     cursor: pointer;
+}
+.addToCartButton {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to left,rgb(231, 231, 231),rgb(206, 204, 207));
+    color: rgba(66, 66, 66, 0.904);
+    transition: 0.2s linear;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: hidden;
+    top: 8px;
+}
+.eachProductBox:hover .addToCartButton {
+    background: linear-gradient(to left,rgb(111, 38, 194),rgb(96, 21, 167));
+    color: rgba(255, 255, 255, 0.904);
 }
