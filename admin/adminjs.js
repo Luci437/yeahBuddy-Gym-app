@@ -1,5 +1,11 @@
 $('.adminTitle').on('click',()=>{
-    window.location.href = "../index.php";
+    $.ajax({
+        url: '../includes/logout.inc.php',
+        success: function() {
+            window.location.href = "../index.php";
+        }
+    });
+    
 });
 
 function confirmOrder(order) {

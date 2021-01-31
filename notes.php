@@ -6,38 +6,39 @@
     <h1 class="trainerTitle">TRAINERS NOTES</h1>
     <h4 class="trainerSubTitle">Here you can see all the important informations that your trainer will be provided</h4>
     <div class="notesMainbox">
-        <div class="eachNotes">
-            <div class="picSection">
-                <img src="images/trainerpic.jpg" class="trainePic" alt="">
-            </div>
-            <div class="noteSection">
-                <h3 class="trainersName">Trainer Name</h3>
-                <h4 class="trainerNote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore unde ratione commodi amet minus nobis quis ut eveniet, rerum aperiam labore quam repellat beatae cum aliquam veritatis dicta vitae suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima eum id nulla sapiente natus, ea eius debitis itaque libero ab, voluptates ullam modi error officiis omnis, voluptatibus quae ad obcaecati?</h4>
-                <h6 class="noteDateAndTime">&#128337; 21-34-2020</h6>
-            </div>
-        </div>
 
-        <div class="eachNotes">
-            <div class="picSection">
-                <img src="images/trainerpic.jpg" class="trainePic" alt="">
-            </div>
-            <div class="noteSection">
-                <h3 class="trainersName">Trainer Name</h3>
-                <h4 class="trainerNote">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h4>
-                <h6 class="noteDateAndTime">&#128337; 21-34-2020</h6>
-            </div>
-        </div>
+        <?php
 
-        <div class="eachNotes">
-            <div class="picSection">
-                <img src="images/trainerpic.jpg" class="trainePic" alt="">
-            </div>
-            <div class="noteSection">
-                <h3 class="trainersName">Trainer Name</h3>
-                <h4 class="trainerNote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore unde ratione commodi amet minus nobis quis ut eveniet, rerum aperiam labore quam repellat beatae cum aliquam veritatis dicta vitae suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima eum id nulla sapiente natus, ea eius debitis itaque libero ab, voluptates ullam modi error officiis omnis, voluptatibus quae ad obcaecati?</h4>
-                <h6 class="noteDateAndTime">&#128337; 21-34-2020</h6>
-            </div>
-        </div>
+        require('./includes/db.inc.php');
+
+        if(isset($_SESSION['user_id'])) {
+            $uid = $_SESSION['user_id'];
+
+            $sql = "SELECT * FROM advice WHERE user_id='$uid';";
+            $result = mysqli_query($conn, $sql);
+
+            while($row = mysqli_fetch_assoc($result)) {
+                echo '
+                <div class="eachNotes">
+                    <div class="picSection">
+                    ';
+                    $trainerId = $row['trainer_id'];
+                    $trainerSql = "SELECT * FROM trainer WHERE user_id='$trainerId';";
+                    $trainerResult = mysqli_fetch_assoc(mysqli_query($conn, $trainerSql));
+                    echo '
+                        <img src="'.$trainerResult['trainerImage'].'" class="trainePic" alt="">
+                    </div>
+                    <div class="noteSection">
+                        <h3 class="trainersName">'.$trainerResult['trainerName'].'</h3>
+                        <h4 class="trainerNote">'.$row["message"].'</h4>
+                        <h6 class="noteDateAndTime">&#128337; '.$row['send_time'].'</h6>
+                    </div>
+                </div>
+                ';
+            }
+        }
+        ?>
+
     </div>
 </div>
 

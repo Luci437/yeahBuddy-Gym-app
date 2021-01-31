@@ -39,6 +39,14 @@
                 <label for="regLast" class="inputLabel">Year of Experience</label>
             </div>
             <div class="inputMainBox">
+                <input type="text" required name="username" id="username" class="inputInput">
+                <label for="username" class="inputLabel">Username</label>
+            </div>
+            <div class="inputMainBox">
+                <input type="password" required name="password" id="password" class="inputInput">
+                <label for="password" class="inputLabel">password</label>
+            </div>
+            <div class="inputMainBox">
                 <input type="file" required name="image" id="regEmail" class="inputInput">
             </div>
             <button class="submitButton" name="submitAdd">Add Trainer</button>

@@ -16,10 +16,19 @@
     <div class="menuBox">
         <h3 class="adminTitle"><i class="fas fa-hat-cowboy-side pdspace"></i> YeahBuddy</h3>
         <div class="menuList">
-            <a href="adminIndex.php" class="menus activeUser"><i class="fas fa-users pdspace"></i> Users</a>
-            <a href="adminProducts.php" class="menus activeProduct"><i class="fas fa-cart-arrow-down pdspace"></i> Products</a>
-            <a href="adminTrainer.php" class="menus activeTrainer"><i class="fas fa-street-view pdspace"></i> Trainers</a>
-            <a href="adminOrder.php" class="menus activeOrder"><i class="fas fa-clipboard pdspace"></i> Orders</a>
+            <?php
+                session_start();
+                if(isset($_SESSION['trainer'])) {
+                    echo '<a href="trainerIndex.php" class="menus activeAdvice"><i class="fas fa-clipboard pdspace"></i> Give Advice</a>';
+                }else {
+                    echo '
+                    <a href="adminIndex.php" class="menus activeUser"><i class="fas fa-users pdspace"></i> Users</a>
+                    <a href="adminProducts.php" class="menus activeProduct"><i class="fas fa-cart-arrow-down pdspace"></i> Products</a>
+                    <a href="adminTrainer.php" class="menus activeTrainer"><i class="fas fa-street-view pdspace"></i> Trainers</a>
+                    <a href="adminOrder.php" class="menus activeOrder"><i class="fas fa-clipboard pdspace"></i> Orders</a>
+                    ';
+                }
+            ?>
         </div>
     </div>
 </div>

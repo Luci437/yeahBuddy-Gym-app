@@ -18,6 +18,12 @@
 
         if($row > 0) {
             $_SESSION['user_id'] = $rows['id'];
+            if($rows['role'] == 'trainer') {
+                $_SESSION['trainer'] = $rows['id'];
+                header('Location: ../admin/trainerIndex.php');
+                exit();
+            }
+            
             header('Location: ../index.php');
             exit();
         }else {
