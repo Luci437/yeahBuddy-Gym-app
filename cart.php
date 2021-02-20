@@ -14,9 +14,13 @@
             
             require('includes/db.inc.php');
             $uid = $_SESSION['user_id'];
-            $sql = "SELECT prd.prdName, prd.prdImage,prd.prdPrice,prd.prdQty FROM cart ct, product prd WHERE ct.user_id='$uid' AND ct.prd_id=prd.id;";
+            $sql = "SELECT prd.prdName,prd.id, prd.prdImage,prd.prdPrice,prd.prdQty FROM cart ct, product prd WHERE ct.user_id='$uid' AND ct.prd_id=prd.id;";
             $result = mysqli_query($conn, $sql);
             $totalProducts = mysqli_num_rows($result);
+            $date = date('M d, Y');
+            $date = strtotime($date);
+            $date = strtotime("+7 day", $date);
+            $ddate = date('M d, Y', $date);
             $totalPay = 0;
             while($row = mysqli_fetch_assoc($result)) {
                 $totalPay += $row['prdPrice'];
@@ -26,14 +30,10 @@
                     <img src="'.$row['prdImage'].'" alt="" class="cartImage">
                 </div>
                 <div class="cartDetailBox">
-                    <h4 class="cartItemName">'.$row['prdName'].'<span class="deliveryDate">Delivery by 12th Dec</span></h4>
+                    <h4 class="cartItemName">'.$row['prdName'].'<span class="deliveryDate">Expect Delivery by '.$ddate.'</span></h4>
                     <h3 class="cartItemPrice">₹<span>'.$row['prdPrice'].'</span></h3>
-                    <!--<div class="increDecreBox">
-                        <button class="DecreButton increDecreButton">-</button>
-                        <input type="text" name="" value="1" class="cartQtyBox">
-                        <button class="IncreButton increDecreButton">+</button>
-                    </div>-->
                 </div>
+                <a href="includes/removeCart.php?prd='.$row['id'].'" class="removeCartButton">Remove</a>
             </div>
             ';
             }

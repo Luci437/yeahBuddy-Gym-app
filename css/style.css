@@ -348,6 +348,17 @@ body {
     gap: 24px;
     overflow: hidden;
 }
+.trainer-main-box a {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    box-sizing: border-box;
+}
 .bmiCard {
     position: absolute;
     right: 16px;
@@ -365,9 +376,10 @@ body {
 .bmiCard:before {
     position: absolute;
     content: '';
-    width: 100px;
+    width: 200px;
     height: 50px;
     background: rgb(240, 149, 64);
+    opacity: 0.1;
     border-radius: 30px;
     z-index: 2;
     transform: rotate(-45deg);
@@ -377,9 +389,10 @@ body {
 .bmiCard:after {
     position: absolute;
     content: '';
-    width: 100px;
+    width: 200px;
     height: 50px;
     background: rgb(240, 149, 64);
+    opacity: 0.1;
     border-radius: 30px;
     z-index: 2;
     transform: rotate(-45deg);
@@ -394,7 +407,7 @@ body {
     padding: 10px;
 }
 #bmiResult  {
-    color: rgba(255, 255, 255, 0.582);
+    color: rgb(255, 255, 255);
 }
 .close-bmi {
     position: absolute;
@@ -807,4 +820,119 @@ body {
 }
 .addressInput:focus {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.123), -5px -5px 5px white;
+}
+.payFeesBox {
+    min-width: 250px;
+    padding: 16px;
+    box-sizing: border-box;
+    background: linear-gradient(45deg,rgb(39, 122, 216),rgb(27, 132, 218));
+    position: absolute;
+    right: 16px;
+    z-index: 100;
+    top: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.payFeesBox:hover .payButton{
+    color: #fff;
+    text-shadow: 0 20px 20px rgba(0, 0, 0, 0.267);
+}
+.payFeesBox:before {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 50px;
+    right: 5%;
+    top: 5%;
+    filter: blur(40px);
+    background: #fff;
+}
+.payFeesBox:after {
+    position: absolute;
+    content: '';
+    width: 250px;
+    height: 50px;
+    bottom: 30%;
+    left: -35%;
+    background: rgba(44, 38, 38, 0.534);
+    transform: rotate(45deg);
+    filter: blur(40px);
+}
+.payTitles {
+    color: rgba(255, 255, 255, 0.89);
+}
+.payTitle1 {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.445);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+.payTitle2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+.payTitle3 {
+    font-weight: 500; 
+    color: rgba(255, 255, 255, 0.445);
+    margin-top: 50px;
+    font-size: 12px;
+}
+.payTitle4 {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    font-weight: bold;
+}
+.payButton {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    color: rgba(255, 255, 255, 0.829);
+    font-size: 34px;
+    transition: 0.2s ease;
+}
+.alertBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(32, 31, 31, 0.609);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 110;
+}
+.alertBox h2 {
+    color: #fff;
+    padding: 16px;
+}
+.alertBox button {
+    padding: 16px 34px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background: linear-gradient(45deg,rgb(51, 141, 224),rgb(40, 128, 200));
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+.removeCartButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 16px 34px;
+    background: tomato;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 3px 3px 16px 3px;
+    font-size: 12px;
+    clip-path: polygon(16% 12%, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0;
+}
+.eachCartItems:hover .removeCartButton {
+    opacity: 1;
 }

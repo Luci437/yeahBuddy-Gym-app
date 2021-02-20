@@ -12,7 +12,7 @@
     <title>YeahBuddy | Welcome</title>
     <!-- main css file -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -48,9 +48,9 @@
                     <!--Trainer and Products-->
                     <div class="trainer-main-box">
                     <video src="images/campfire.mp4" muted autoplay loop class="menuVideo"></video>
-                    <a href="Trainers.php" title="Trainers"><i class="fas fa-walking userWeightIcon"></i></a>
-                    <a href="products.php" title="Products"><i class="fas fa-shopping-bag userWeightIcon"></i></a>
-                    <a href="notes.php" title="Notes"><i class="fas fa-clipboard userWeightIcon"></i></a>
+                    <a href="Trainers.php" title="Trainers"><i class="fas fa-walking userWeightIcon"></i>Trainer</a>
+                    <a href="products.php" title="Products"><i class="fas fa-shopping-bag userWeightIcon"></i>Products</a>
+                    <a href="notes.php" title="Notes"><i class="fas fa-clipboard userWeightIcon"></i>Notes</a>
                     </div>
                     <!-- User weight and height box -->
                     <div class="weightAndHeightBox">

@@ -8,7 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -24,6 +24,7 @@
                     echo '
                     <a href="adminIndex.php" class="menus activeUser"><i class="fas fa-users pdspace"></i> Users</a>
                     <a href="adminProducts.php" class="menus activeProduct"><i class="fas fa-cart-arrow-down pdspace"></i> Products</a>
+                    <a href="adminFees.php" class="menus activeFees"><i class="fas fa-rupee-sign pdspace"></i> Fees</a>
                     <a href="adminTrainer.php" class="menus activeTrainer"><i class="fas fa-street-view pdspace"></i> Trainers</a>
                     <a href="adminOrder.php" class="menus activeOrder"><i class="fas fa-clipboard pdspace"></i> Orders</a>
                     ';

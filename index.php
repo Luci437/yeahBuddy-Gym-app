@@ -2,16 +2,16 @@
     include('commonPartTop.php');
 ?>
 
-        <div class="mainRightSideBox">
-            <!-- image slider box -->
-            <div class="mainSliderBox">
-                <div class="imageInSlider">
-                    <!-- BMI card -->
-                    <?php
+<div class="mainRightSideBox">
+    <!-- image slider box -->
+    <div class="mainSliderBox">
+        <div class="imageInSlider">
+            <!-- BMI card -->
+            <?php
                     if(isset($_SESSION['user_id'])) {
                         echo '
                         <div class="bmiCard">
-                            <table class="bmiTable" cellspacing="10">
+                            <table class="bmiTable">
                                 <tr>
                                     <td rowspan="2">
                                         <i class="fas fa-notes-medical userWeightIcon"></i>
@@ -32,26 +32,78 @@
                     }
                     ?>
 
-                    <div class="textMainBox">
-                        <?php
+            <?php
+                    if(isset($_SESSION['user_id'])) {
+                        $uid = $_SESSION['user_id'];
+                        $currentMonth = date("M");
+                        $currentYear = date("Y");
+                        $fullMonth = date('F', strtotime(date('Y/m/d')));
+    
+                        require "includes/db.inc.php";
+    
+                        $sql = "select u.firstName,u.id,u.email,u.profile_pic from usertable u where u.role='user' and u.id in (SELECT f.user_id from fees f where f.feeMonth='$currentMonth' AND f.feeYear=$currentYear AND f.user_id='$uid')";
+    
+                        $result = mysqli_query($conn,$sql);
+                        $row = mysqli_num_rows($result);
+                        if($row == 0) {
+                            echo '
+                            <div class="payFeesBox">
+                            <a href="includes/payFees.php" class="payButton"><i class="fas fa-arrow-circle-right"></i></a>
+                            <p class="payTitle1 payTitles">Pay Fees</p>
+                            <p class="payTitle2 payTitles">'.$fullMonth.'</p>
+                            <p class="payTitle3 payTitles">Total pay</p>
+                            <p class="payTitle4 payTitles"><i class="fas fa-rupee-sign" style="font-size: 14px;"></i> 500</p>
+                        </div>
+                            ';
+                        }
+                    }
+                    ?>
+
+
+
+            <div class="textMainBox">
+                <?php
                             if(isset($_SESSION['user_id'])){
                                 echo '<h1>WELCOME TO "YEAHBUDDY"</h1>
-                                <h3>The best personalized fitness training Social media platform.  </h3>';
+                                <h3>The best personalized fitness training Social media platform.  </h3>
+                                ';
+
+                                $sql = "SELECT * FROM feesAlert WHERE user_id='$uid' AND active=1;";
+                                $result = mysqli_query($conn, $sql);
+                                $row = mysqli_num_rows($result);
+
+                                if($row > 0) {
+                                    $sql2 = "select u.firstName,u.id,u.email,u.profile_pic from usertable u where u.role='user' and u.id in (SELECT f.user_id from fees f where f.feeMonth='$currentMonth' AND f.feeYear=$currentYear AND f.user_id='$uid')";
+                                    $result2 = mysqli_num_rows(mysqli_query($conn, $sql2));
+                                    if($result2 == 0) {
+                                        echo '
+                                        <div class="alertBox">
+                                        
+                                        <h2> It\'s time to pay fees</h2>
+                                        <button onclick="clearAlert()">Ok</button>
+                                        </div>
+                                        ';
+                                    }
+
+                                }
+
+
+
                             }else {
                                 echo '<h1>JOIN OUR FAMILY NOW \'YEAHBUDDY\'</h1>
                                 <h3>The best personalized fitness training Social media platform.  </h3>';
                             }
                         ?>
-                    </div>
-                </div>
-                <div class="sliderButtonBox">
-                    <button class="left-arrow-button" onclick="changeImage(-1);"><i
-                            class="fas fa-arrow-circle-left arrowButtonIcon"></i></button>
-                    <button class="right-arrow-button" onclick="changeImage(1);"><i
-                            class="fas fa-arrow-circle-right arrowButtonIcon"></i></button>
-                </div>
             </div>
-            <?php
+        </div>
+        <div class="sliderButtonBox">
+            <button class="left-arrow-button" onclick="changeImage(-1);"><i
+                    class="fas fa-arrow-circle-left arrowButtonIcon"></i></button>
+            <button class="right-arrow-button" onclick="changeImage(1);"><i
+                    class="fas fa-arrow-circle-right arrowButtonIcon"></i></button>
+        </div>
+    </div>
+    <?php
                 if(!isset($_SESSION['user_id'])) {
                     echo '            <!-- login signup box -->
                     <div class="loginAndSignupBox">
@@ -106,7 +158,7 @@
                 }
             ?>
 
-        </div>
+</div>
 <?php
     include('commonPartBottom.php');
 ?>

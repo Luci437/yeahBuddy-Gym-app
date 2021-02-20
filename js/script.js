@@ -116,3 +116,7 @@ function addToCart(cart) {
         }
     });
 }
+
+function clearAlert() {
+    $('.alertBox').hide();
+}
