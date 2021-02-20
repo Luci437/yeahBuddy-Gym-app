@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2021 at 07:27 AM
+-- Generation Time: Feb 20, 2021 at 01:26 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -53,6 +53,57 @@ CREATE TABLE `cart` (
   `user_id` int(11) NOT NULL,
   `prd_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `prd_id`) VALUES
+(18, 20, 3),
+(19, 20, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fees`
+--
+
+CREATE TABLE `fees` (
+  `id` int(11) NOT NULL,
+  `feeAmount` bigint(20) NOT NULL DEFAULT 500,
+  `feeMonth` varchar(20) NOT NULL,
+  `feeYear` varchar(20) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `feePaidOn` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `fees`
+--
+
+INSERT INTO `fees` (`id`, `feeAmount`, `feeMonth`, `feeYear`, `user_id`, `feePaidOn`) VALUES
+(1, 500, 'Feb', '2021', 16, '2021-02-20'),
+(2, 500, 'Feb', '2021', 17, '2021-02-20'),
+(3, 500, 'Feb', '2021', 20, '2021-02-20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feesalert`
+--
+
+CREATE TABLE `feesalert` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feesalert`
+--
+
+INSERT INTO `feesalert` (`id`, `user_id`, `active`) VALUES
+(1, 20, 1);
 
 -- --------------------------------------------------------
 
@@ -222,7 +273,7 @@ CREATE TABLE `userwh` (
 INSERT INTO `userwh` (`id`, `user_id`, `user_weight`, `user_height`) VALUES
 (12, 16, 80, 171),
 (13, 17, 55, 182),
-(14, 18, 5, 110),
+(14, 18, 62, 152),
 (16, 20, 52, 165);
 
 --
@@ -239,6 +290,18 @@ ALTER TABLE `advice`
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `fees`
+--
+ALTER TABLE `fees`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feesalert`
+--
+ALTER TABLE `feesalert`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -301,7 +364,19 @@ ALTER TABLE `advice`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `fees`
+--
+ALTER TABLE `fees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `feesalert`
+--
+ALTER TABLE `feesalert`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orderaddress`
